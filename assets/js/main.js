@@ -24,7 +24,7 @@ navLink.forEach((n) => {
 });
 
 // Active selector
-
+const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", scrollActive);
 
 function scrollActive() {
@@ -33,7 +33,7 @@ function scrollActive() {
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    const sectionId = current.getAttribute("id");
+    sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
@@ -48,8 +48,8 @@ function scrollActive() {
 }
 
 // Change color header
-window.onScroll = () => {
+window.onscroll = () => {
   const nav = document.getElementById("header");
   if (this.scrollY >= 200) nav.classList.add("scroll-header");
-  else nav.classList.remove("sccroll-header");
+  else nav.classList.remove("scroll-header");
 };
